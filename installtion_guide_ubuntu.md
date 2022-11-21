@@ -44,7 +44,11 @@ for more details - https://tecadmin.net/install-oracle-java-11-on-ubuntu-16-04-x
   - sudo apt install oracle-java11-set-default-local
 
 #### Installing Nexus as a service on UBUNTU 20.04 #####
+
+
 ### Requirements ###
+
+
 - Use t2.medium server from AWS because it needs 4GB of RAM and 20GB of space
 
   - To check OS-version UBUNTU:
