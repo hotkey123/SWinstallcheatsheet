@@ -20,6 +20,11 @@ execute command - sudo update-alternatives --config java ( select which ever jav
 - sudo add-apt-repository ppa:openjdk-r/ppa
 - sudo apt-get update
 - sudo apt install openjdk-11-jdk
+- export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+- echo $JAVA_HOME
+- export PATH=$PATH:$JAVA_HOME/bin
+- echo $PATH
+- java -version
 
 
 ## JAVA 11 installation in ubuntu 16.04
