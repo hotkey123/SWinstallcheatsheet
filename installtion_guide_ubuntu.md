@@ -77,41 +77,41 @@ for more details - https://tecadmin.net/install-oracle-java-11-on-ubuntu-16-04-x
 
   - Adding Nexus User in nexus.rc file:
 	- sudo vi /opt/nexus/bin/nexus.rc
-		run_as_user="nexus"
+			run_as_user="nexus"
 	
   - Adding memory content in vmoptions file:
 	- sudo vi /opt/nexus/bin/nexus.vmoptions
-		-Xms1024m
-		-Xmx1024m
-		-XX:MaxDirectMemorySize=1024m
+			-Xms1024m
+			-Xmx1024m
+			-XX:MaxDirectMemorySize=1024m
 
-		-XX:LogFile=./sonatype-work/nexus3/log/jvm.log
-		-XX:-OmitStackTraceInFastThrow
-		-Djava.net.preferIPv4Stack=true
-		-Dkaraf.home=.
-		-Dkaraf.base=.
-		-Dkaraf.etc=etc/karaf
-		-Djava.util.logging.config.file=/etc/karaf/java.util.logging.properties
-		-Dkaraf.data=./sonatype-work/nexus3
-		-Dkaraf.log=./sonatype-work/nexus3/log
-		-Djava.io.tmpdir=./sonatype-work/nexus3/tmp
+			-XX:LogFile=./sonatype-work/nexus3/log/jvm.log
+			-XX:-OmitStackTraceInFastThrow
+			-Djava.net.preferIPv4Stack=true
+			-Dkaraf.home=.
+			-Dkaraf.base=.
+			-Dkaraf.etc=etc/karaf
+			-Djava.util.logging.config.file=/etc/karaf/java.util.logging.properties
+			-Dkaraf.data=./sonatype-work/nexus3
+			-Dkaraf.log=./sonatype-work/nexus3/log
+			-Djava.io.tmpdir=./sonatype-work/nexus3/tmp
 	
   - Create a systemd service file to manage the Nexus service:
 	- sudo vi /etc/systemd/system/nexus.service
-		[Unit]
-		Description=nexus service
-		After=network.target
+			[Unit]
+			Description=nexus service
+			After=network.target
 
-		[Service]
-		Type=forking
-		LimitNOFILE=65536
-		ExecStart=/opt/nexus/bin/nexus start
-		ExecStop=/opt/nexus/bin/nexus stop
-		User=nexus
-		Restart=on-abort
+			[Service]
+			Type=forking
+			LimitNOFILE=65536
+			ExecStart=/opt/nexus/bin/nexus start
+			ExecStop=/opt/nexus/bin/nexus stop
+			User=nexus
+			Restart=on-abort
 
-		[Install]
-		WantedBy=multi-user.target
+			[Install]
+			WantedBy=multi-user.target
 	
   - Starting Nexus service:
 	- sudo systemctl start nexus
