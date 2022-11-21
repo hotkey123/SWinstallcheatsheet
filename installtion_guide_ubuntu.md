@@ -77,7 +77,7 @@ for more details - https://tecadmin.net/install-oracle-java-11-on-ubuntu-16-04-x
 
   - Adding Nexus User in nexus.rc file:
 	- sudo vi /opt/nexus/bin/nexus.rc
-			run_as_user="nexus"
+		- run_as_user="nexus"
 	
   - Adding memory content in vmoptions file:
 	- sudo vi /opt/nexus/bin/nexus.vmoptions
